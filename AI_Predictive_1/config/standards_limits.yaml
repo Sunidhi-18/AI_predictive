@@ -1,0 +1,92 @@
+# Standards and Vibration Limits Configuration
+# Primary Reference: ISO 10816-7:2009 / Europump Guideline on Pump Vibration First Edition (July 2013) Table 1 (Page 9)
+# Note on Standard Status:
+# ISO 10816-7:2009 is currently listed by ISO as published and under revision.
+# Work item ISO/AWI 20816-7 is in development by ISO/TC 108/SC 2 (checked October 2026).
+# The draft revision is NOT yet a published standard. This application adheres to ISO 10816-7:2009.
+
+standards_status:
+  standard_id: "ISO 10816-7:2009"
+  title: "Mechanical vibration — Evaluation of machine vibration by measurements on non-rotating parts — Part 7: Rotodynamic pumps for industrial applications, including measurements on rotating shafts"
+  published_date: "2009-02-01"
+  status_record: "Published; Under revision as ISO/AWI 20816-7 (in development as of October 2026)"
+  reference_document: "Europump Guideline on Pump Vibration, July 2013, Section 1.5, Table 1, Page 9"
+
+# Evaluation Zones Description according to ISO 10816-7:
+# Zone A: Vibration of newly commissioned machines in POR
+# Zone B: Acceptable for unrestricted long-term continuous operation in AOR
+# Zone C: Unsatisfactory for continuous operation; limited continuous operation permitted until remedial action
+# Zone D: Vibration severity sufficient to cause damage to the machine; immediate shutdown/investigation required
+
+severity_limits:
+  category_1:
+    description: >
+      Category I pumps: Required to have high level of reliability, availability or safety
+      (e.g., pumps for toxic/hazardous liquids, critical chemical, oil & gas, nuclear or power plant duties).
+    power_le_200kw:
+      nominal_power_kw_max: 200.0
+      units: "mm/s RMS"
+      measurement_surface: "bearing_housing"
+      zones:
+        A: 2.5
+        B: 4.0
+        C: 6.6
+      alarm_multiplier: 1.25  # 1.25 * Zone B = 5.0 mm/s
+      trip_multiplier: 1.25   # 1.25 * Zone C = 8.25 -> rounded to 8.3 mm/s in table
+      alarm_limit: 5.0
+      trip_limit: 8.3
+      source_table: "Europump 2013 Table 1, p. 9 / ISO 10816-7:2009 Table 1"
+    power_gt_200kw:
+      nominal_power_kw_min: 200.0
+      units: "mm/s RMS"
+      measurement_surface: "bearing_housing"
+      zones:
+        A: 3.5
+        B: 5.0
+        C: 7.6
+      alarm_multiplier: 1.25  # 1.25 * Zone B = 6.25 -> 6.3 mm/s
+      trip_multiplier: 1.25   # 1.25 * Zone C = 9.5 mm/s
+      alarm_limit: 6.3
+      trip_limit: 9.5
+      source_table: "Europump 2013 Table 1, p. 9 / ISO 10816-7:2009 Table 1"
+
+  category_2:
+    description: >
+      Category II pumps: Pumps for general or less critical industrial applications
+      (e.g., non-hazardous fluids, water distribution, vertical suspended pumps > 600 rpm).
+    power_le_200kw:
+      nominal_power_kw_max: 200.0
+      units: "mm/s RMS"
+      measurement_surface: "bearing_housing"
+      zones:
+        A: 3.2
+        B: 5.1
+        C: 8.5
+      alarm_multiplier: 1.25  # 1.25 * Zone B = 6.375 -> 6.4 mm/s
+      trip_multiplier: 1.25   # 1.25 * Zone C = 10.625 -> 10.6 mm/s
+      alarm_limit: 6.4
+      trip_limit: 10.6
+      source_table: "Europump 2013 Table 1, p. 9 / ISO 10816-7:2009 Table 1"
+    power_gt_200kw:
+      nominal_power_kw_min: 200.0
+      units: "mm/s RMS"
+      measurement_surface: "bearing_housing"
+      zones:
+        A: 4.2
+        B: 6.1
+        C: 9.5
+      alarm_multiplier: 1.25  # 1.25 * Zone B = 7.625 -> 7.6 mm/s
+      trip_multiplier: 1.25   # 1.25 * Zone C = 11.875 -> 11.9 mm/s
+      alarm_limit: 7.6
+      trip_limit: 11.9
+      source_table: "Europump 2013 Table 1, p. 9 / ISO 10816-7:2009 Table 1"
+
+operational_regions:
+  POR:
+    name: "Preferred Operating Range"
+    definition: "Typically 70% to 120% of Best Efficiency Point (BEP)"
+    guidance: "Vibration is lowest and hydraulic excitation is minimized"
+  AOR:
+    name: "Allowable Operating Range"
+    definition: "Flow range where pump can operate continuously without excessive wear"
+    guidance: "Higher vibration (up to Zone B) is acceptable"

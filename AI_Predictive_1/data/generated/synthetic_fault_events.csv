@@ -1,0 +1,14 @@
+machine_id,fault_scenario,start_date,end_date,description,provenance,random_seed,generator_version
+M1206,rotor_imbalance,2024-04-10,2024-05-05,Progressive mass loss on impeller creating 1x radial unbalance,SYNTHETIC_SIMULATION,42,1.0.0
+M1207,rotor_imbalance,2024-04-10,2024-05-05,Progressive mass loss on impeller creating 1x radial unbalance,SYNTHETIC_SIMULATION,42,1.0.0
+M1208,rotor_imbalance,2024-04-10,2024-05-05,Progressive mass loss on impeller creating 1x radial unbalance,SYNTHETIC_SIMULATION,42,1.0.0
+M1209,shaft_misalignment,2024-08-15,2024-09-10,Thermal growth / foundation shift creating 2x vibration & high coupling axial P2/P3,SYNTHETIC_SIMULATION,42,1.0.0
+M1210,shaft_misalignment,2024-08-15,2024-09-10,Thermal growth / foundation shift creating 2x vibration & high coupling axial P2/P3,SYNTHETIC_SIMULATION,42,1.0.0
+M1211,shaft_misalignment,2024-08-15,2024-09-10,Thermal growth / foundation shift creating 2x vibration & high coupling axial P2/P3,SYNTHETIC_SIMULATION,42,1.0.0
+M1212,bearing_defect_thermal,2025-02-01,2025-03-01,Outer race microspall with lubrication starvation leading to thermal runaway > 80C,SYNTHETIC_SIMULATION,42,1.0.0
+M1213,bearing_defect_thermal,2025-02-01,2025-03-01,Outer race microspall with lubrication starvation leading to thermal runaway > 80C,SYNTHETIC_SIMULATION,42,1.0.0
+M1214,bearing_defect_thermal,2025-02-01,2025-03-01,Outer race microspall with lubrication starvation leading to thermal runaway > 80C,SYNTHETIC_SIMULATION,42,1.0.0
+M1215,mechanical_looseness,2025-06-10,2025-07-05,Loose baseplate hold-down bolts causing strong directional asymmetry and harmonics,SYNTHETIC_SIMULATION,42,1.0.0
+M1216,mechanical_looseness,2025-06-10,2025-07-05,Loose baseplate hold-down bolts causing strong directional asymmetry and harmonics,SYNTHETIC_SIMULATION,42,1.0.0
+M1217,hydraulic_cavitation,2025-09-01,2025-09-25,Suction strainer blockage causing NPSH deficit and turbulent broadband vibration,SYNTHETIC_SIMULATION,42,1.0.0
+M1218,hydraulic_cavitation,2025-09-01,2025-09-25,Suction strainer blockage causing NPSH deficit and turbulent broadband vibration,SYNTHETIC_SIMULATION,42,1.0.0

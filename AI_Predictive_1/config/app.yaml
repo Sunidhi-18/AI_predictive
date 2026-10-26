@@ -1,0 +1,62 @@
+# Application Configuration
+app:
+  name: "Intelligent Predictive Maintenance Framework for Smart Manufacturing"
+  version: "1.0.0"
+  environment: "local"
+  academic_prototype: true
+  safety_notice: >
+    This software is an academic engineering prototype for condition monitoring,
+    fault diagnosis, and decision support. It is NOT a certified safety protection
+    system. It must never directly trip physical machinery or override certified
+    hardwired plant safety interlocks.
+
+paths:
+  data_raw: "data/raw"
+  data_generated: "data/generated"
+  data_processed: "data/processed"
+  data_features: "data/features"
+  data_quarantine: "data/quarantine"
+  data_archive: "data/archive/original_inputs"
+  database: "data/database/maintenance.db"
+  outputs_figures: "outputs/figures"
+  outputs_reports: "outputs/reports"
+  outputs_evaluation: "outputs/evaluation"
+  docs_reference: "docs/reference"
+
+telemetry:
+  measurement_points:
+    P1:
+      name: "Pump Non-Drive End"
+      code: "P-NDE"
+      type: "pump"
+      directions: ["V", "H", "A"]
+    P2:
+      name: "Pump Drive End"
+      code: "P-DE"
+      type: "pump"
+      directions: ["V", "H", "A"]
+    P3:
+      name: "Motor Drive End"
+      code: "M-DE"
+      type: "motor"
+      directions: ["V", "H", "A"]
+    P4:
+      name: "Motor Non-Drive End"
+      code: "M-NDE"
+      type: "motor"
+      directions: ["V", "H", "A"]
+  units:
+    vibration: "mm/s RMS"
+    temperature: "degC"
+    frequency: "Hz"
+    rotational_speed: "RPM"
+
+quality:
+  max_allowable_missing_pct: 20.0
+  vibration_range: [0.0, 50.0]  # mm/s RMS physical valid range
+  temperature_range: [-10.0, 150.0]  # degC physical valid range
+  quarantine_on_invalid_id: true
+  quarantine_on_invalid_timestamp: true
+
+logging:
+  level: "INFO"

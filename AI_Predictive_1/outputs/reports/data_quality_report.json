@@ -1,0 +1,94 @@
+{
+  "daily_telemetry.csv": {
+    "source_file": "raw_daily_telemetry",
+    "total_records": 3655,
+    "valid_records": 3104,
+    "quarantined_records": 551,
+    "total_cells": 65790,
+    "missing_cells": 5263,
+    "missing_percentage": 8.0,
+    "missing_machine_ids": 281,
+    "missing_timestamps": 286,
+    "out_of_range_values": 0,
+    "duplicate_rows": 0,
+    "missing_by_column": {
+      "Machine_number": 281,
+      "time stamp": 286,
+      "P1-V": 310,
+      "P1-H": 275,
+      "P1-A": 302,
+      "P1-T": 297,
+      "P2-V": 282,
+      "P2-H": 308,
+      "P2-A": 308,
+      "P2-T": 292,
+      "P3-V": 275,
+      "P3-H": 311,
+      "P3-A": 272,
+      "P3-T": 274,
+      "P4-V": 279,
+      "P4-H": 315,
+      "P4-A": 277,
+      "P4-T": 319
+    },
+    "quarantine_reasons": {
+      "MISSING_MACHINE_ID": 281,
+      "MISSING_TIMESTAMP": 286
+    },
+    "machines_present": [
+      "M1201",
+      "M1202",
+      "M1203",
+      "M1204",
+      "M1205"
+    ],
+    "date_start": "2024-01-01",
+    "date_end": "2025-12-31"
+  },
+  "high_readings_telemetry.csv": {
+    "source_file": "raw_high_readings_telemetry",
+    "total_records": 3655,
+    "valid_records": 3080,
+    "quarantined_records": 575,
+    "total_cells": 65790,
+    "missing_cells": 4955,
+    "missing_percentage": 7.53,
+    "missing_machine_ids": 298,
+    "missing_timestamps": 292,
+    "out_of_range_values": 0,
+    "duplicate_rows": 0,
+    "missing_by_column": {
+      "Machine_number": 298,
+      "time stamp": 292,
+      "P1-V": 251,
+      "P1-H": 267,
+      "P1-A": 279,
+      "P1-T": 302,
+      "P2-V": 247,
+      "P2-H": 309,
+      "P2-A": 235,
+      "P2-T": 276,
+      "P3-V": 267,
+      "P3-H": 261,
+      "P3-A": 253,
+      "P3-T": 292,
+      "P4-V": 257,
+      "P4-H": 287,
+      "P4-A": 263,
+      "P4-T": 319
+    },
+    "quarantine_reasons": {
+      "MISSING_TIMESTAMP": 292,
+      "MISSING_MACHINE_ID": 298
+    },
+    "machines_present": [
+      "M1201",
+      "M1202",
+      "M1203",
+      "M1204",
+      "M1205"
+    ],
+    "date_start": "2024-01-01",
+    "date_end": "2025-12-31"
+  }
+}

@@ -1,0 +1,519 @@
+{
+  "report_generated_at": "2026-10-26T12:53:57.493852",
+  "train_samples": 15809,
+  "test_samples": 3962,
+  "feature_count": 204,
+  "target_channels": [
+    "target_P1-V",
+    "target_P1-H",
+    "target_P1-A",
+    "target_P1-T",
+    "target_P2-V",
+    "target_P2-H",
+    "target_P2-A",
+    "target_P2-T",
+    "target_P3-V",
+    "target_P3-H",
+    "target_P3-A",
+    "target_P3-T",
+    "target_P4-V",
+    "target_P4-H",
+    "target_P4-A",
+    "target_P4-T"
+  ],
+  "models_evaluated": {
+    "random_forest": {
+      "overall_mae": 0.424,
+      "overall_rmse": 0.849,
+      "overall_r2": 0.7308,
+      "per_channel": {
+        "target_P1-V": {
+          "mae": 0.2828,
+          "rmse": 0.6289,
+          "r2": 0.6207
+        },
+        "target_P1-H": {
+          "mae": 0.3158,
+          "rmse": 0.7422,
+          "r2": 0.5985
+        },
+        "target_P1-A": {
+          "mae": 0.2323,
+          "rmse": 0.5503,
+          "r2": 0.7742
+        },
+        "target_P1-T": {
+          "mae": 0.934,
+          "rmse": 1.4994,
+          "r2": 0.7737
+        },
+        "target_P2-V": {
+          "mae": 0.2913,
+          "rmse": 0.6289,
+          "r2": 0.6749
+        },
+        "target_P2-H": {
+          "mae": 0.2936,
+          "rmse": 0.6405,
+          "r2": 0.6602
+        },
+        "target_P2-A": {
+          "mae": 0.2435,
+          "rmse": 0.5421,
+          "r2": 0.8124
+        },
+        "target_P2-T": {
+          "mae": 0.8234,
+          "rmse": 1.1955,
+          "r2": 0.8556
+        },
+        "target_P3-V": {
+          "mae": 0.2731,
+          "rmse": 0.5837,
+          "r2": 0.6819
+        },
+        "target_P3-H": {
+          "mae": 0.2741,
+          "rmse": 0.5751,
+          "r2": 0.6849
+        },
+        "target_P3-A": {
+          "mae": 0.2586,
+          "rmse": 0.6027,
+          "r2": 0.7587
+        },
+        "target_P3-T": {
+          "mae": 0.8645,
+          "rmse": 1.3077,
+          "r2": 0.7978
+        },
+        "target_P4-V": {
+          "mae": 0.2778,
+          "rmse": 0.5907,
+          "r2": 0.7157
+        },
+        "target_P4-H": {
+          "mae": 0.3206,
+          "rmse": 0.7506,
+          "r2": 0.627
+        },
+        "target_P4-A": {
+          "mae": 0.2579,
+          "rmse": 0.6007,
+          "r2": 0.7911
+        },
+        "target_P4-T": {
+          "mae": 0.8405,
+          "rmse": 1.2195,
+          "r2": 0.8649
+        }
+      },
+      "model_name": "Random Forest Regressor (Multi-Output)",
+      "hyperparameters": {
+        "n_estimators": 100,
+        "max_depth": 12,
+        "min_samples_split": 4,
+        "random_state": 42
+      }
+    },
+    "persistence_baseline": {
+      "overall_mae": 0.482,
+      "overall_rmse": 1.0151,
+      "overall_r2": 0.6787,
+      "per_channel": {
+        "target_P1-V": {
+          "mae": 0.2941,
+          "rmse": 0.6923,
+          "r2": 0.5403
+        },
+        "target_P1-H": {
+          "mae": 0.3,
+          "rmse": 0.7247,
+          "r2": 0.6173
+        },
+        "target_P1-A": {
+          "mae": 0.2709,
+          "rmse": 0.6796,
+          "r2": 0.6556
+        },
+        "target_P1-T": {
+          "mae": 1.1206,
+          "rmse": 1.861,
+          "r2": 0.6514
+        },
+        "target_P2-V": {
+          "mae": 0.2886,
+          "rmse": 0.6094,
+          "r2": 0.6948
+        },
+        "target_P2-H": {
+          "mae": 0.2839,
+          "rmse": 0.6034,
+          "r2": 0.6984
+        },
+        "target_P2-A": {
+          "mae": 0.2644,
+          "rmse": 0.619,
+          "r2": 0.7554
+        },
+        "target_P2-T": {
+          "mae": 1.0232,
+          "rmse": 1.5293,
+          "r2": 0.7637
+        },
+        "target_P3-V": {
+          "mae": 0.2914,
+          "rmse": 0.6281,
+          "r2": 0.6317
+        },
+        "target_P3-H": {
+          "mae": 0.2897,
+          "rmse": 0.627,
+          "r2": 0.6254
+        },
+        "target_P3-A": {
+          "mae": 0.2555,
+          "rmse": 0.6092,
+          "r2": 0.7535
+        },
+        "target_P3-T": {
+          "mae": 1.0725,
+          "rmse": 1.7063,
+          "r2": 0.6558
+        },
+        "target_P4-V": {
+          "mae": 0.3051,
+          "rmse": 0.6655,
+          "r2": 0.6392
+        },
+        "target_P4-H": {
+          "mae": 0.3066,
+          "rmse": 0.69,
+          "r2": 0.6848
+        },
+        "target_P4-A": {
+          "mae": 0.2793,
+          "rmse": 0.6793,
+          "r2": 0.7329
+        },
+        "target_P4-T": {
+          "mae": 1.067,
+          "rmse": 1.6273,
+          "r2": 0.7595
+        }
+      },
+      "model_name": "Persistence Baseline (Today = Tomorrow)"
+    },
+    "ridge_regression": {
+      "overall_mae": 0.408,
+      "overall_rmse": 0.8156,
+      "overall_r2": 0.7855,
+      "per_channel": {
+        "target_P1-V": {
+          "mae": 0.2634,
+          "rmse": 0.5792,
+          "r2": 0.6782
+        },
+        "target_P1-H": {
+          "mae": 0.2801,
+          "rmse": 0.6425,
+          "r2": 0.6992
+        },
+        "target_P1-A": {
+          "mae": 0.23,
+          "rmse": 0.5465,
+          "r2": 0.7773
+        },
+        "target_P1-T": {
+          "mae": 0.9215,
+          "rmse": 1.4466,
+          "r2": 0.7894
+        },
+        "target_P2-V": {
+          "mae": 0.244,
+          "rmse": 0.492,
+          "r2": 0.801
+        },
+        "target_P2-H": {
+          "mae": 0.2465,
+          "rmse": 0.4927,
+          "r2": 0.799
+        },
+        "target_P2-A": {
+          "mae": 0.2312,
+          "rmse": 0.4964,
+          "r2": 0.8427
+        },
+        "target_P2-T": {
+          "mae": 0.9149,
+          "rmse": 1.3171,
+          "r2": 0.8247
+        },
+        "target_P3-V": {
+          "mae": 0.2311,
+          "rmse": 0.4824,
+          "r2": 0.7827
+        },
+        "target_P3-H": {
+          "mae": 0.2353,
+          "rmse": 0.483,
+          "r2": 0.7777
+        },
+        "target_P3-A": {
+          "mae": 0.2173,
+          "rmse": 0.4795,
+          "r2": 0.8473
+        },
+        "target_P3-T": {
+          "mae": 0.8875,
+          "rmse": 1.3184,
+          "r2": 0.7945
+        },
+        "target_P4-V": {
+          "mae": 0.2513,
+          "rmse": 0.5429,
+          "r2": 0.7598
+        },
+        "target_P4-H": {
+          "mae": 0.2865,
+          "rmse": 0.6774,
+          "r2": 0.6962
+        },
+        "target_P4-A": {
+          "mae": 0.2216,
+          "rmse": 0.5221,
+          "r2": 0.8422
+        },
+        "target_P4-T": {
+          "mae": 0.8658,
+          "rmse": 1.2558,
+          "r2": 0.8568
+        }
+      },
+      "model_name": "Ridge Linear Regression Baseline"
+    }
+  },
+  "sample_zone_transitions_detected": 34,
+  "sample_evaluations": [
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-11",
+      "forecast_date": "2025-08-12",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.22,
+      "predicted_peak": 4.374223376299705,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-12",
+      "forecast_date": "2025-08-13",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.23,
+      "predicted_peak": 4.229396740623887,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-13",
+      "forecast_date": "2025-08-14",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 7.99,
+      "predicted_peak": 4.420549804700987,
+      "is_degradation": false,
+      "transition_alert": "Condition projected to improve from Zone to Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-14",
+      "forecast_date": "2025-08-15",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.11,
+      "predicted_peak": 4.523868807194446,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-15",
+      "forecast_date": "2025-08-16",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.16,
+      "predicted_peak": 4.314895172304597,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-16",
+      "forecast_date": "2025-08-17",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 5.22,
+      "predicted_peak": 4.122125804710356,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-17",
+      "forecast_date": "2025-08-18",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.32,
+      "predicted_peak": 4.259769672930672,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-18",
+      "forecast_date": "2025-08-19",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 9.66,
+      "predicted_peak": 4.359559552758471,
+      "is_degradation": false,
+      "transition_alert": "Condition projected to improve from Zone to Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-19",
+      "forecast_date": "2025-08-20",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 9.4,
+      "predicted_peak": 4.343951307787667,
+      "is_degradation": false,
+      "transition_alert": "Condition projected to improve from Zone to Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-20",
+      "forecast_date": "2025-08-21",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.37,
+      "predicted_peak": 4.464875240055509,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-21",
+      "forecast_date": "2025-08-22",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.37,
+      "predicted_peak": 4.25301122408966,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-22",
+      "forecast_date": "2025-08-23",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 8.5,
+      "predicted_peak": 4.456404098261016,
+      "is_degradation": false,
+      "transition_alert": "Condition projected to improve from Zone to Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-23",
+      "forecast_date": "2025-08-24",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.12,
+      "predicted_peak": 4.302052517912072,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-24",
+      "forecast_date": "2025-08-25",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.36,
+      "predicted_peak": 4.2410115526031085,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-25",
+      "forecast_date": "2025-08-26",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 8.12,
+      "predicted_peak": 4.1346727902358476,
+      "is_degradation": false,
+      "transition_alert": "Condition projected to improve from Zone to Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-26",
+      "forecast_date": "2025-08-27",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.43,
+      "predicted_peak": 4.292552538101164,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-27",
+      "forecast_date": "2025-08-28",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.77,
+      "predicted_peak": 4.529754250238454,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-28",
+      "forecast_date": "2025-08-29",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.33,
+      "predicted_peak": 4.345045164087184,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-29",
+      "forecast_date": "2025-08-30",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.73,
+      "predicted_peak": 4.24008572309085,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    },
+    {
+      "machine_id": "M1201",
+      "current_date": "2025-08-30",
+      "forecast_date": "2025-08-31",
+      "current_zone": "Zone",
+      "predicted_zone": "Zone",
+      "current_peak": 4.15,
+      "predicted_peak": 4.378701475755571,
+      "is_degradation": false,
+      "transition_alert": "Operational stability projected: Machine remains in Zone."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "evaluation_strategy": "Machine-Wise Holdout (Unseen Machines)",
+  "train_machines_count": 14,
+  "test_holdout_machines": [
+    "M1215",
+    "M1216",
+    "M1217",
+    "M1218",
+    "M1219",
+    "M1220"
+  ],
+  "train_rows": 15344,
+  "test_rows": 6576,
+  "test_ground_truth_anomalies": 102,
+  "test_predicted_anomalies": 3905,
+  "metrics": {
+    "precision": 0.0261,
+    "recall": 1.0,
+    "f1_score": 0.0509,
+    "true_positives": 102,
+    "false_positives": 3803,
+    "true_negatives": 2671,
+    "false_negatives": 0
+  },
+  "academic_disclosure": "These metrics evaluate the ML workflow on synthetically simulated degradation events. Model performance on synthetic data MUST NOT be interpreted as certified physical detection accuracy on industrial plant equipment."
+}

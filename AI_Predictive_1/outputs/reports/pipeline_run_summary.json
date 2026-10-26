@@ -1,0 +1,22 @@
+{
+  "pipeline_version": "1.0.0",
+  "timestamp_start": "2026-10-26T00:51:22.221178",
+  "timestamp_end": "2026-10-26T00:51:35.038485",
+  "duration_seconds": 12.82,
+  "total_valid_records": 20011,
+  "total_quarantined_records": 1126,
+  "anomalies_detected": 2060,
+  "events_recorded": 3206,
+  "zone_distribution": {
+    "Zone C (Unsatisfactory / Limited continuous operation)": 2335,
+    "Zone B (Acceptable / Unrestricted long-term)": 6285,
+    "Zone D (Hazardous / Damage risk)": 762,
+    "Zone A (Good / New commissioning)": 10629
+  },
+  "database_file": "C:\\Users\\omgow\\OneDrive\\Desktop\\AI_Predictive_1\\data\\database\\maintenance.db",
+  "data_features_saved": [
+    "data/processed/normalized_telemetry.parquet",
+    "data/features/telemetry_features.parquet",
+    "data/features/wide_directional_features.parquet"
+  ]
+}

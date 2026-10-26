@@ -1,0 +1,254 @@
+# Machine Registry and Technical Configuration
+# Contains engineering parameters needed for standards assessment, diagnostic rules, and operating context.
+
+machines:
+  M1201:
+    name: "High-Pressure Boiler Feed Pump #1"
+    category: "category_1"
+    nominal_power_kw: 160.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 5
+    bearing_type_pump: "rolling_element"
+    bearing_type_motor: "rolling_element"
+    operating_range_default: "AOR"
+    temperature_limits:
+      warning_deg_c: 70.0
+      alarm_deg_c: 85.0
+    measurement_points:
+      P1: "P-NDE (Pump Non-Drive End Bearing)"
+      P2: "P-DE (Pump Drive End Bearing)"
+      P3: "M-DE (Motor Drive End Bearing)"
+      P4: "M-NDE (Motor Non-Drive End Bearing)"
+    status: "configured"
+
+  M1202:
+    name: "Heavy Duty Hydrocarbon Transfer Pump"
+    category: "category_1"
+    nominal_power_kw: 250.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 6
+    bearing_type_pump: "rolling_element"
+    bearing_type_motor: "rolling_element"
+    operating_range_default: "POR"
+    temperature_limits:
+      warning_deg_c: 75.0
+      alarm_deg_c: 90.0
+    measurement_points:
+      P1: "P-NDE (Pump Non-Drive End Bearing)"
+      P2: "P-DE (Pump Drive End Bearing)"
+      P3: "M-DE (Motor Drive End Bearing)"
+      P4: "M-NDE (Motor Non-Drive End Bearing)"
+    status: "configured"
+
+  M1203:
+    name: "Auxiliary Cooling Water Circulation Pump"
+    category: "category_2"
+    nominal_power_kw: 90.0
+    rated_speed_rpm: 1500
+    running_frequency_hz: 25.0
+    impeller_vanes: 5
+    bearing_type_pump: "rolling_element"
+    bearing_type_motor: "rolling_element"
+    operating_range_default: "AOR"
+    temperature_limits:
+      warning_deg_c: 65.0
+      alarm_deg_c: 80.0
+    measurement_points:
+      P1: "P-NDE (Pump Non-Drive End Bearing)"
+      P2: "P-DE (Pump Drive End Bearing)"
+      P3: "M-DE (Motor Drive End Bearing)"
+      P4: "M-NDE (Motor Non-Drive End Bearing)"
+    status: "configured"
+
+  M1204:
+    name: "Raw Water Intake Primary Pump"
+    category: "category_2"
+    nominal_power_kw: 315.0
+    rated_speed_rpm: 1500
+    running_frequency_hz: 25.0
+    impeller_vanes: 7
+    bearing_type_pump: "rolling_element"
+    bearing_type_motor: "rolling_element"
+    operating_range_default: "AOR"
+    temperature_limits:
+      warning_deg_c: 65.0
+      alarm_deg_c: 80.0
+    measurement_points:
+      P1: "P-NDE (Pump Non-Drive End Bearing)"
+      P2: "P-DE (Pump Drive End Bearing)"
+      P3: "M-DE (Motor Drive End Bearing)"
+      P4: "M-NDE (Motor Non-Drive End Bearing)"
+    status: "configured"
+
+  M1205:
+    name: "General Service Utility Pump (Unverified Specification)"
+    category: null
+    nominal_power_kw: null
+    rated_speed_rpm: 1500
+    running_frequency_hz: 25.0
+    impeller_vanes: 5
+    bearing_type_pump: "rolling_element"
+    bearing_type_motor: "rolling_element"
+    operating_range_default: "AOR"
+    temperature_limits:
+      warning_deg_c: 65.0
+      alarm_deg_c: 80.0
+    measurement_points:
+      P1: "P-NDE (Pump Non-Drive End Bearing)"
+      P2: "P-DE (Pump Drive End Bearing)"
+      P3: "M-DE (Motor Drive End Bearing)"
+      P4: "M-NDE (Motor Non-Drive End Bearing)"
+    status: "incomplete_configuration"
+
+
+  M1206:
+    name: "Boiler Feed Pump #2 (Imbalance Unit)"
+    category: "category_1"
+    nominal_power_kw: 132.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 5
+    temperature_limits: {warning_deg_c: 70.0, alarm_deg_c: 85.0}
+    status: "configured"
+
+  M1207:
+    name: "Condensate Extraction Pump #1"
+    category: "category_1"
+    nominal_power_kw: 160.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 5
+    temperature_limits: {warning_deg_c: 70.0, alarm_deg_c: 85.0}
+    status: "configured"
+
+  M1208:
+    name: "Condensate Extraction Pump #2"
+    category: "category_1"
+    nominal_power_kw: 160.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 5
+    temperature_limits: {warning_deg_c: 70.0, alarm_deg_c: 85.0}
+    status: "configured"
+
+  M1209:
+    name: "Main Oil Transfer Pump #1 (Misalignment Unit)"
+    category: "category_1"
+    nominal_power_kw: 200.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 6
+    temperature_limits: {warning_deg_c: 75.0, alarm_deg_c: 90.0}
+    status: "configured"
+
+  M1210:
+    name: "Main Oil Transfer Pump #2"
+    category: "category_1"
+    nominal_power_kw: 200.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 6
+    temperature_limits: {warning_deg_c: 75.0, alarm_deg_c: 90.0}
+    status: "configured"
+
+  M1211:
+    name: "High Pressure Booster Pump"
+    category: "category_1"
+    nominal_power_kw: 250.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 6
+    temperature_limits: {warning_deg_c: 75.0, alarm_deg_c: 90.0}
+    status: "configured"
+
+  M1212:
+    name: "Chemical Injection Pump (Bearing Defect Unit)"
+    category: "category_1"
+    nominal_power_kw: 315.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 6
+    temperature_limits: {warning_deg_c: 75.0, alarm_deg_c: 90.0}
+    status: "configured"
+
+  M1213:
+    name: "Chemical Circulation Pump"
+    category: "category_1"
+    nominal_power_kw: 280.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 6
+    temperature_limits: {warning_deg_c: 75.0, alarm_deg_c: 90.0}
+    status: "configured"
+
+  M1214:
+    name: "Secondary Coolant Injection Pump"
+    category: "category_1"
+    nominal_power_kw: 350.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 6
+    temperature_limits: {warning_deg_c: 75.0, alarm_deg_c: 90.0}
+    status: "configured"
+
+  M1215:
+    name: "Effluent Drainage Pump #1 (Looseness Unit)"
+    category: "category_2"
+    nominal_power_kw: 110.0
+    rated_speed_rpm: 1500
+    running_frequency_hz: 25.0
+    impeller_vanes: 5
+    temperature_limits: {warning_deg_c: 65.0, alarm_deg_c: 80.0}
+    status: "configured"
+
+  M1216:
+    name: "Effluent Drainage Pump #2"
+    category: "category_2"
+    nominal_power_kw: 110.0
+    rated_speed_rpm: 1500
+    running_frequency_hz: 25.0
+    impeller_vanes: 5
+    temperature_limits: {warning_deg_c: 65.0, alarm_deg_c: 80.0}
+    status: "configured"
+
+  M1217:
+    name: "Storm Water Lift Pump #1 (Cavitation Unit)"
+    category: "category_2"
+    nominal_power_kw: 160.0
+    rated_speed_rpm: 1500
+    running_frequency_hz: 25.0
+    impeller_vanes: 5
+    temperature_limits: {warning_deg_c: 65.0, alarm_deg_c: 80.0}
+    status: "configured"
+
+  M1218:
+    name: "Storm Water Lift Pump #2"
+    category: "category_2"
+    nominal_power_kw: 160.0
+    rated_speed_rpm: 1500
+    running_frequency_hz: 25.0
+    impeller_vanes: 5
+    temperature_limits: {warning_deg_c: 65.0, alarm_deg_c: 80.0}
+    status: "configured"
+
+  M1219:
+    name: "Process Water Service Pump (Sensor Anomaly)"
+    category: "category_2"
+    nominal_power_kw: 75.0
+    rated_speed_rpm: 1500
+    running_frequency_hz: 25.0
+    impeller_vanes: 5
+    temperature_limits: {warning_deg_c: 65.0, alarm_deg_c: 80.0}
+    status: "configured"
+
+  M1220:
+    name: "Fire Water Auxiliary Pump"
+    category: "category_1"
+    nominal_power_kw: 200.0
+    rated_speed_rpm: 3000
+    running_frequency_hz: 50.0
+    impeller_vanes: 6
+    temperature_limits: {warning_deg_c: 70.0, alarm_deg_c: 85.0}
+    status: "configured"

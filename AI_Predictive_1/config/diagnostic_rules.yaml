@@ -1,0 +1,179 @@
+# Diagnostic Rules Configuration
+# Multi-evidence diagnostic logic for rotating machinery (pumps and electric motors)
+# Designed to produce hypothesis candidates with supporting and contradictory evidence.
+
+rules:
+  imbalance:
+    name: "Rotor Imbalance Candidate"
+    fault_family: "mechanical"
+    evidence_criteria:
+      spectral:
+        dominant_orders: [1.0]
+        peak_order_1x_ratio_min: 0.60
+        direction_dominance: ["radial"]  # H and V significantly higher than A
+        typical_phase_shift_deg: 90.0
+      telemetry:
+        location_dominance: ["P1", "P2"]  # Pump side typically shows highest unbalance amplitude
+        multi_location_consistency: false
+    missing_evidence_checks:
+      - "Phase measurement between horizontal and vertical planes to confirm 90 deg difference"
+      - "Spectral peak ratio under dynamic variable speed testing"
+    recommendation: "Perform single-plane or two-plane dynamic field balancing; inspect impeller for uneven scaling or loss of balancing weights."
+
+  misalignment:
+    name: "Shaft or Coupling Misalignment Candidate"
+    fault_family: "mechanical"
+    evidence_criteria:
+      spectral:
+        orders: [1.0, 2.0]
+        order_2x_ratio_min: 0.35  # Significant 2x running speed component
+        axial_dominance: true     # High axial vibration across coupling (P2-A and P3-A)
+      telemetry:
+        coupling_side_dominance: ["P2", "P3"]
+        multi_location_consistency: true
+    missing_evidence_checks:
+      - "Laser alignment check across pump and motor coupling hubs"
+      - "Phase shift across coupling (approx. 180 deg out of phase)"
+    recommendation: "Inspect coupling element condition, check for soft foot, and verify laser shaft alignment under hot running conditions."
+
+  mechanical_looseness:
+    name: "Mechanical Looseness Candidate"
+    fault_family: "mechanical"
+    evidence_criteria:
+      spectral:
+        multiple_harmonics: true  # 1x, 2x, 3x, 4x, ... 10x
+        subharmonics: true        # 0.5x, 1.5x, 2.5x
+      telemetry:
+        directional_ratio_hv_high: true  # Often large difference between H and V
+    missing_evidence_checks:
+      - "Visual and torque wrench inspection of foundation anchor bolts, baseplate grout, and bearing pedestals"
+      - "Motion amplification or operational deflection shape (ODS) survey"
+    recommendation: "Torque anchor bolts, check for cracked baseplate grout or loose bearing cap bolts."
+
+  resonance:
+    name: "Resonance / Structural Foundation Issue Candidate"
+    fault_family: "structural"
+    evidence_criteria:
+      spectral:
+        narrowband_amplification: true
+        order_sensitivity: true
+      telemetry:
+        directional_skew: true
+    missing_evidence_checks:
+      - "Coast-down / run-up Bode/Nyquist test or impact bump test to determine natural frequencies"
+      - "Pipe strain verification"
+    recommendation: "Perform impact testing on piping and pump skid; stiffen foundation or adjust pump speed to avoid natural frequencies."
+
+  bearing_defect:
+    name: "Rolling-Element Bearing Defect Candidate"
+    fault_family: "bearing"
+    evidence_criteria:
+      spectral:
+        high_frequency_harmonics: true
+        defect_frequencies_present: ["BPFO", "BPFI", "BSF", "FTF"]
+        frequency_range_hz_min: 150.0
+      telemetry:
+        high_frequency_vibration: true
+        thermal_elevation: true
+    missing_evidence_checks:
+      - "High-frequency enveloping / demodulation spectrum (HFE / PeakVue / Shock Pulse)"
+      - "Bearing geometric confirmation (pitch diameter, roller count, contact angle)"
+    recommendation: "Collect high-frequency envelope spectrum; schedule ultrasonic listening inspection and bearing replacement."
+
+  lubrication_failure:
+    name: "Lubrication Deficiency / Bearing Overheating Candidate"
+    fault_family: "tribology"
+    evidence_criteria:
+      telemetry:
+        temperature_threshold_exceeded: true
+        temperature_trend_positive: true
+      spectral:
+        broadband_friction_noise: true
+    missing_evidence_checks:
+      - "Oil/grease sample laboratory analysis (viscosity, water contamination, wear debris)"
+      - "Infrared thermographic survey"
+    recommendation: "Replenish/change grease according to OEM schedule; inspect oil level, seal integrity, and oil cooler flow."
+
+  cavitation_turbulence:
+    name: "Cavitation / Hydraulic Turbulence Candidate"
+    fault_family: "hydraulic"
+    evidence_criteria:
+      spectral:
+        broadband_high_frequency_noise: true
+        frequency_range_hz_min: 300.0
+      operational:
+        suction_pressure_low: true
+        flow_outside_por: true
+    missing_evidence_checks:
+      - "Suction pressure (NPSHa vs NPSHr) and differential head records"
+      - "Acoustic audible popping / gravel noise in pump casing"
+    recommendation: "Check suction strainer for clogging, confirm suction valve is fully open, verify NPSH margin, and avoid low-flow throttling."
+
+  vane_pass:
+    name: "Impeller Blade Passing Vibration Candidate"
+    fault_family: "hydraulic"
+    evidence_criteria:
+      spectral:
+        blade_pass_peak: true  # Frequency = Z * 1x RPM
+      telemetry:
+        location_pump_volute: ["P1", "P2"]
+    missing_evidence_checks:
+      - "Impeller vane count confirmation"
+      - "Internal cutwater clearance (Gap 'A' and Gap 'B') verification"
+    recommendation: "Check pump cutwater clearance and inspect impeller tips for erosion or blockage."
+
+  operating_range_abnormal:
+    name: "Abnormal Operation Outside Preferred Range Candidate"
+    fault_family: "operational"
+    evidence_criteria:
+      operational:
+        flow_outside_por: true
+        recirculation_noise: true
+    missing_evidence_checks:
+      - "Process flow meter and control valve position logs"
+    recommendation: "Return pump operating point to 70-120% of BEP."
+
+  mechanical_rubbing:
+    name: "Mechanical Rubbing / Seal Contact Candidate"
+    fault_family: "mechanical"
+    evidence_criteria:
+      spectral:
+        subharmonics_0_5x: true
+        multiple_harmonics: true
+      telemetry:
+        localized_heating: true
+    missing_evidence_checks:
+      - "Internal rotor radial clearance and wear ring gap measurement"
+    recommendation: "Inspect mechanical seal face and casing wear rings for contact marks."
+
+  motor_electrical:
+    name: "Potential Motor / Electrical Fault Candidate"
+    fault_family: "electrical"
+    evidence_criteria:
+      spectral:
+        twice_line_frequency: 100.0  # 2x FL (100 Hz for 50 Hz grid)
+        pole_pass_sidebands: true
+      electrical:
+        current_unbalance_detected: true
+    missing_evidence_checks:
+      - "Motor Current Signature Analysis (MCSA)"
+      - "3-phase stator current and supply voltage waveforms"
+    recommendation: "Collect MCSA current measurements; test stator winding resistance and check rotor bars."
+
+  sensor_or_data_quality:
+    name: "Sensor Fault / Missing Data / Quality Anomaly Candidate"
+    fault_family: "instrumentation"
+    evidence_criteria:
+      data_quality:
+        consecutive_missing_readings: true
+        frozen_repeated_readings: true
+        out_of_physical_range: true
+    missing_evidence_checks:
+      - "Sensor cabling continuity and accelerometer mounting stud torque"
+    recommendation: "Inspect sensor cabling, verify signal conditioner power, check transmitter calibration."
+
+  unknown_insufficient_evidence:
+    name: "Unknown / Insufficient Evidence — Physical Inspection Required"
+    fault_family: "indeterminate"
+    description: "Vibration or temperature is abnormal, but available spectral or process evidence cannot conclusively differentiate fault hypotheses."
+    recommendation: "Deploy condition monitoring specialist with portable high-resolution vibration analyzer; perform walkdown inspection."
